@@ -24,12 +24,11 @@ int main() {
   // [delta, v]
   VectorXd actuators(2);
 
-  state << 0, 0, deg2rad(45), 1;
-  actuators << deg2rad(5), 1;
+  state << 0, 0, deg2rad(45), 1; // GLB x, y, psi(rad), v(m/s)
+  actuators << deg2rad(5), 1; // SWA(rad), Acceleration(m/s^2)
 
   // should be [0.212132, 0.212132, 0.798488, 1.3]
-  auto next_state = globalKinematic(state, actuators, 0.3);
-
+  auto next_state = globalKinematic(state, actuators, 0.3); // notice [dt] is 0.3 here
   std::cout << next_state << std::endl;
 }
 

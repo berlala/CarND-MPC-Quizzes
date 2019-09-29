@@ -24,6 +24,7 @@ int main() {
   auto coeffs = polyfit(xvals, yvals, 3);
 
   for (double x = 0; x <= 20; ++x) {
+    // ++x in each loop,x = x+1
     // We can evaluate the polynomial at a x coordinate by calling `polyeval`.
     //   The first argument being the coefficients, `coeffs`.
     //   The second being the x coordinate, `x`.
